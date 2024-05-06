@@ -90,9 +90,11 @@ const Movies = () => {
       </div>
 
       <h1 className="font-bold text-3xl p-3 ml-12">
-        {movies.length === 0
-          ? `No movies found for ${searchItem}`
-          : `Trending movies are...`}
+        {searchItem
+          ? movies.length
+            ? `Search Results for ${searchItem}`
+            : `No Results Found for ${searchItem}`
+          : "All Movies"}
       </h1>
 
       <div className="flex flex-wrap">
