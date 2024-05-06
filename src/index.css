@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: rgb(49, 48, 48);
+  color: white;
+}
+.shimmer {
+    position: relative;
+    overflow: hidden;
+    height: 350px;
+    width: 220px;
+    border-radius: 10px;
+    background-color: rgb(248, 248, 248);
+  }
+
+  /* rgb(216, 215, 215); */
+  
+  .shimmer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+    animation: shimmer 1s infinite linear;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+
+  .button-89 {
+    --b: 3px;   
+    --s: .45em; 
+    /* --color: #373B44; */
+    --color: white;
+    
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+      conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+      var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+  
+    border: 0;
+  
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 200px;
+  }
+  
+  .button-89:hover,
+  .button-89:focus-visible{
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+  }
+  
+  .button-89:active {
+    background: var(--color);
+    color: #fff;
+  }
+
+
+
+  * {
+    box-sizing: border-box;
+  }
+  /* :root {
+    --background-color: black;
+    --text-color: hsl(0, 0%, 100%);
+  }
+  body {
+    margin: 0;
+  } */
+  .wrapper {
+    border: 1px solid white;
+    display: grid;
+    font-family: "Oswald", sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    margin: 1.5% 4%;
+    padding: 0 35px;
+    border-bottom: 2px solid white;
+    max-width: fit-content;
+  }
+  
+  .wrapper > div {
+    grid-area: 1/1/-1/-1;
+  }
+  .top {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 48%, 0% 58%);
+  }
+  .bottom {
+    clip-path: polygon(0% 60%, 100% 50%, 100% 100%, 0% 100%);
+    background: -webkit-linear-gradient(177deg, black 53%, var(--text-color) 65%);
+    background: linear-gradient(177deg, black 53%, var(--text-color) 65%);
+    transform: translateX(-0.02em);
+  }
+
+.inputBox{
+  height: 50px;
+  width: 69%;
+  margin: 40px 20px;
+  border-radius: 8px;
+  outline: none;
+  color: black;
+  font-size: 25px;
+  padding: 20px;
+}
+  
