@@ -104,7 +104,9 @@ const Movies = () => {
       <div className="flex justify-center gap-11 p-10">
         <button
           className="button-89"
-          onClick={() => setPage(page === 1 ? 1 : page - 1)}
+          onClick={() =>
+            setPage(movies.length === 0 ? 1 : page === 1 ? 1 : page - 1)
+          }
         >
           Previous
         </button>
@@ -112,7 +114,7 @@ const Movies = () => {
         <button
           className="button-89"
           onClick={() => {
-            setPage(page + 1);
+            setPage(movies.length === 0 ? 1 : page + 1);
           }}
         >
           Next
